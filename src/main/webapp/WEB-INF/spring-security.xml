@@ -22,17 +22,17 @@
 
 	<authentication-manager>
 		<authentication-provider>
-			<user-service>
-				<user name="admin" password="123" authorities="ROLE_ADMIN" />
-				<user name="adm" password="123" authorities="ROLE_ADMIN" />
-				<user name="usr" password="123" authorities="ROLE_USER" />
-			</user-service>
+			<!--<user-service>-->
+				<!--<user name="admin" password="123" authorities="ROLE_ADMIN" />-->
+				<!--<user name="adm" password="123" authorities="ROLE_ADMIN" />-->
+				<!--<user name="usr" password="123" authorities="ROLE_USER" />-->
+			<!--</user-service>-->
 
-			<!--<jdbc-user-service data-source-ref="dataSource"-->
-							   <!--users-by-username-query=-->
-									   <!--"SELECT user.contactPhoneNumber as 'username', user.password, user.enabled FROM homebd1.user"-->
-							   <!--authorities-by-username-query=-->
-									   <!--"SELECT user.contactPhoneNumber as 'username', userRoles.role FROM homebd1.user, userRoles where homebd1.user.role=userRoles.id" />-->
+			<jdbc-user-service data-source-ref="dataSource"
+							   users-by-username-query=
+									   "SELECT user.contactPhoneNumber as 'username', user.password, user.enabled FROM homebd1.user where user.contactPhoneNumber=?"
+							   authorities-by-username-query=
+									   "SELECT user.contactPhoneNumber as 'username', userRoles.role FROM homebd1.user, userRoles where homebd1.user.role=userRoles.id and user.contactPhoneNumber=?" />
 		</authentication-provider>
 	</authentication-manager>
 
