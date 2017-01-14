@@ -20,7 +20,7 @@ public class User {
     private int id;
 
     @Column(name = "apartment")
-    private int apartment;
+    private String apartment;
 
     @Column(name = "firstName")
     private String firstName;
@@ -56,11 +56,11 @@ public class User {
         this.id = id;
     }
 
-    public int getApartment() {
+    public String getApartment() {
         return apartment;
     }
 
-    public void setApartment(int apartment) {
+    public void setApartment(String apartment) {
         this.apartment = apartment;
     }
 

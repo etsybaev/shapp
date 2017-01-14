@@ -53,7 +53,7 @@
 						</form:label>
 					</td>
 					<td>
-						<form:input path="firstName"/>
+						<form:input required="required" pattern="[A-Za-z]{1,15}" path="firstName"/>
 					</td>
 				</tr>
 				<tr>
@@ -63,7 +63,7 @@
 						</form:label>
 					</td>
 					<td>
-						<form:input path="lastName"/>
+						<form:input required="required" pattern="[A-Za-z]{1,15}" path="lastName"/>
 					</td>
 				</tr>
 				<tr>
@@ -73,7 +73,7 @@
 						</form:label>
 					</td>
 					<td>
-						<form:input path="apartment"/>
+						<form:input required="required" pattern="[A-Za-z0-9]{1,15}" path="apartment"/>
 					</td>
 				</tr>
 				<tr>
@@ -83,7 +83,9 @@
 						</form:label>
 					</td>
 					<td>
-						<form:input path="contactPhoneNumber"/>
+						<form:input maxlength="12"  pattern="^[0-9]{12,12}$"  required="required"
+									title="Phone number must be in international format and contains digits only. Ex. 380441234567"
+									path="contactPhoneNumber"/>
 					</td>
 				</tr>
 				<tr>
@@ -93,7 +95,8 @@
 						</form:label>
 					</td>
 					<td>
-						<form:input path="password"/>
+						<form:input required="required" pattern=".{4,10}"
+									title="Password must be from 4 to 10 characters" maxlength="10" path="password"/>
 					</td>
 				</tr>
 				<tr>
