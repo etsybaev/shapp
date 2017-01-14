@@ -55,10 +55,7 @@
         <h3>Welcome : ${pageContext.request.userPrincipal.name} | <a href="<c:url value="/logout" />" > Logout</a></h3>
     </c:if>
 
-<br/>
-<br/>
-
-<h1>Add a user</h1>
+<h1>Add new user</h1>
 
 <c:url var="addAction" value="/admin/adduser"/>
 
