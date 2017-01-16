@@ -25,6 +25,9 @@ public class UserController {
     }
 
 
+    //On Client send request with header Content-Type:application/x-www-form-urlencoded
+    //and body firstName=fName&lastName=lName&apartment=app&contactPhoneNumber=654654654654&password=someMyPass
+
     //This one is used when non admin wants to "join the club" :)
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String registerUser(@ModelAttribute("user") User user){

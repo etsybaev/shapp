@@ -54,7 +54,7 @@ public class UserDaoImpl implements UserDao {
         System.out.println("Getting user with id = " + id);
         Session session = this.sessionFactory.getCurrentSession();
         User user = (User) session.load(User.class, new Integer(id));
-        System.out.println("Go user " + user);
+        System.out.println("Got user " + user);
         return user;
     }
 

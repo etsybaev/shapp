@@ -13,6 +13,10 @@
 		<intercept-url pattern="/userpages**" access="isAuthenticated()" />
 		<intercept-url pattern="/userpages/**" access="isAuthenticated()" />
 
+		<intercept-url pattern="/controller**" access="isAuthenticated()" />
+		<intercept-url pattern="/controller/**" access="isAuthenticated()" />
+		<intercept-url pattern="/controller/open/**" access="isAuthenticated()" />
+
 		<!--Adding remember me checkbox to login page, 2592000=30 days-->
 		<remember-me key="uniqueAndSecret" token-validity-seconds="2592000"/>
 

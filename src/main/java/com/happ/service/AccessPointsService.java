@@ -10,5 +10,6 @@ import java.util.List;
  */
 public interface AccessPointsService {
     public int getAccessPointId(AccessPointsEnum accessPointsEnum);
+    public AccessPoints getAccessPointById(int id);
     public List<AccessPoints> getAllAccessPoints();
 }

@@ -49,4 +49,15 @@ public class AccessPointsDaoImpl implements AccessPointsDao {
         }
         return accessPointsList;
     }
+
+
+    @Override
+    public AccessPoints getAccessPointById(int id) {
+        System.out.println("Getting accessPoint by Id");
+        Session session = this.sessionFactory.getCurrentSession();
+        AccessPoints accessPoint = (AccessPoints) session.load(AccessPoints.class, new Integer(id));
+        System.out.println("Got accessPoint: " + accessPoint);
+        return accessPoint;
+    }
+
 }

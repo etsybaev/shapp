@@ -83,4 +83,6 @@
         <property name="userRolesDao" ref="userRolesDao"/>
     </bean>
 
+    <bean id="raspberryControllerService" class="com.happ.service.RaspberryControllerServiceImpl"/>
+
 </beans>

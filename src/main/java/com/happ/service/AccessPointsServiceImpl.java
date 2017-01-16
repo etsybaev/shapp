@@ -32,4 +32,10 @@ public class AccessPointsServiceImpl implements AccessPointsService {
     public List<AccessPoints> getAllAccessPoints(){
         return this.accessPointsDao.getAllAccessPoints();
     }
+
+    @Override
+    @Transactional
+    public AccessPoints getAccessPointById(int id) {
+        return accessPointsDao.getAccessPointById(id);
+    }
 }
