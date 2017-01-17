@@ -3,6 +3,7 @@ package com.happ.dao;
 import com.happ.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -54,6 +55,18 @@ public class UserDaoImpl implements UserDao {
         System.out.println("Getting user with id = " + id);
         Session session = this.sessionFactory.getCurrentSession();
         User user = (User) session.load(User.class, new Integer(id));
+        System.out.println("Got user " + user);
+        return user;
+    }
+
+    public User getUserByContactPhoneNumber(String phoneNumber){
+        System.out.println("Getting user by PhoneNumber " + phoneNumber);
+        Session session = this.sessionFactory.getCurrentSession();
+
+        String hql = "from User where contactPhoneNumber = :phoneNumber";
+        User user = (User) session.createQuery(hql)
+                                  .setParameter("phoneNumber", phoneNumber)
+                                  .uniqueResult();
         System.out.println("Got user " + user);
         return user;
     }

@@ -12,5 +12,6 @@ public interface UserService {
     public void updateUser(User user);
     public void removeUser(int id);
     public User getUserById(int id);
+    public User getUserByContactPhoneNumber(String phoneNumber);//contact phone number is used as main identifier(loginName) in Spring Security
     public List<User> listUsers();
 }

@@ -45,6 +45,14 @@ public class UserServiceImpl implements UserService {
         return this.userDao.getUserById(id);
     }
 
+
+    //contact phone number is used as main identifier(loginName) in Spring Security
+    @Override
+    @Transactional
+    public User getUserByContactPhoneNumber(String phoneNumber){
+        return this.userDao.getUserByContactPhoneNumber(phoneNumber);
+    }
+
     @Override
     @Transactional
     public List<User> listUsers() {
