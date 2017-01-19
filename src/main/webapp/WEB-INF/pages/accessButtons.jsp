@@ -3,13 +3,21 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
+<script type="text/javascript">
+	function httpGet(id){
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.open( "GET", "controller/open/" + id, false ); // false for synchronous request
+		xmlHttp.send( null );
+		return xmlHttp.responseText;
+	}
+</script>
 
 	<br/>
-	<button onclick="get_workderp_imes();" id="MAIN_HOME_ENTRANCE">MAIN_HOME_ENTRANCE</button>
+	<button onclick="httpGet(1);" id="MAIN_HOME_ENTRANCE">MAIN_HOME_ENTRANCE</button>
 	<br/><br/>
-	<button onclick="switchstatus('Derp');" id="MAIN_GATE">MAIN_GATE</button>
+	<button onclick="httpGet(2);" id="MAIN_GATE">MAIN_GATE</button>
 	<br/><br/>
-	<button onclick="switchstatus('Work');" id="WICKET_MAIN_GATE">WICKET_MAIN_GATE</button>
+	<button onclick="httpGet(4);" id="WICKET_MAIN_GATE">WICKET_MAIN_GATE</button>
 	<br/><br/>
-	<button onclick="switchstatus('Work');" id="WICKET_NOVUS">WICKET_NOVUS</button>
+	<button onclick="httpGet(5);" id="WICKET_NOVUS">WICKET_NOVUS</button>
 	<br/><br/>

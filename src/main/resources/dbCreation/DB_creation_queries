@@ -13,18 +13,18 @@ CREATE TABLE `HomeBD`.`AccessHistory` (
 -------------------------------------------------------------------------
 
 
-CREATE TABLE `HomeBD`.`Accesspoints` (
+CREATE TABLE `HomeBD`.`AccessPoints` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `accessPointName` TEXT NOT NULL,
   `description` TEXT NOT NULL,
   PRIMARY KEY (`id`));
 
 
-INSERT INTO `HomeBD`.`Accesspoints` (`accessPointName`, `description`) VALUES ('MAIN_HOME_ENTRANCE', 'MAIN HOME ENTRANCE');
-INSERT INTO `HomeBD`.`Accesspoints` (`accessPointName`, `description`) VALUES ('MAIN_GATE', 'GATE (Main)');
-INSERT INTO `HomeBD`.`Accesspoints` (`accessPointName`, `description`) VALUES ('GATE_NOVUS', 'GATE (NOVUS)');
-INSERT INTO `HomeBD`.`Accesspoints` (`accessPointName`, `description`) VALUES ('WICKET_MAIN_GATE', 'WICKET (MAIN GATE)');
-INSERT INTO `HomeBD`.`Accesspoints` (`accessPointName`, `description`) VALUES ('WICKET_NOVUS', 'WICKET (NOVUS)');
+INSERT INTO `HomeBD`.`AccessPoints` (`accessPointName`, `description`) VALUES ('MAIN_HOME_ENTRANCE', 'MAIN HOME ENTRANCE');
+INSERT INTO `HomeBD`.`AccessPoints` (`accessPointName`, `description`) VALUES ('MAIN_GATE', 'GATE (Main)');
+INSERT INTO `HomeBD`.`AccessPoints` (`accessPointName`, `description`) VALUES ('GATE_NOVUS', 'GATE (NOVUS)');
+INSERT INTO `HomeBD`.`AccessPoints` (`accessPointName`, `description`) VALUES ('WICKET_MAIN_GATE', 'WICKET (MAIN GATE)');
+INSERT INTO `HomeBD`.`AccessPoints` (`accessPointName`, `description`) VALUES ('WICKET_NOVUS', 'WICKET (NOVUS)');
 
 
 -------------------------------------------------------------------------
