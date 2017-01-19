@@ -34,9 +34,9 @@
 
 			<jdbc-user-service data-source-ref="dataSource"
 							   users-by-username-query=
-									   "SELECT user.contactPhoneNumber as 'username', user.password, user.enabled FROM homebd1.user where user.contactPhoneNumber=?"
+									   "SELECT User.contactPhoneNumber as 'username', User.password, User.enabled FROM User where User.contactPhoneNumber=?"
 							   authorities-by-username-query=
-									   "SELECT user.contactPhoneNumber as 'username', userRoles.role FROM homebd1.user, userRoles where homebd1.user.role=userRoles.id and user.contactPhoneNumber=?" />
+									   "SELECT User.contactPhoneNumber as 'username', UserRoles.role FROM User, UserRoles where User.role=UserRoles.id and User.contactPhoneNumber=?" />
 		</authentication-provider>
 	</authentication-manager>
 

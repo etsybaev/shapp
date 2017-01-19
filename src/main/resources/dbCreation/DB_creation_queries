@@ -1,9 +1,9 @@
-CREATE SCHEMA `homebd1` ;
+CREATE SCHEMA `HomeBD` ;
 
 
 -------------------------------------------------------------------------
 
-CREATE TABLE `homebd1`.`accessHistory` (
+CREATE TABLE `HomeBD`.`AccessHistory` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `userId` INT(11) NOT NULL,
   `accessPointId` INT(11) NOT NULL,
@@ -13,33 +13,33 @@ CREATE TABLE `homebd1`.`accessHistory` (
 -------------------------------------------------------------------------
 
 
-CREATE TABLE `homebd1`.`accesspoints` (
+CREATE TABLE `HomeBD`.`Accesspoints` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `accessPointName` TEXT NOT NULL,
   `description` TEXT NOT NULL,
   PRIMARY KEY (`id`));
 
 
-INSERT INTO `homebd1`.`accesspoints` (`accessPointName`, `description`) VALUES ('MAIN_HOME_ENTRANCE', 'MAIN HOME ENTRANCE');
-INSERT INTO `homebd1`.`accesspoints` (`accessPointName`, `description`) VALUES ('MAIN_GATE', 'GATE (Main)');
-INSERT INTO `homebd1`.`accesspoints` (`accessPointName`, `description`) VALUES ('GATE_NOVUS', 'GATE (NOVUS)');
-INSERT INTO `homebd1`.`accesspoints` (`accessPointName`, `description`) VALUES ('WICKET_MAIN_GATE', 'WICKET (MAIN GATE)');
-INSERT INTO `homebd1`.`accesspoints` (`accessPointName`, `description`) VALUES ('WICKET_NOVUS', 'WICKET (NOVUS)');
+INSERT INTO `HomeBD`.`Accesspoints` (`accessPointName`, `description`) VALUES ('MAIN_HOME_ENTRANCE', 'MAIN HOME ENTRANCE');
+INSERT INTO `HomeBD`.`Accesspoints` (`accessPointName`, `description`) VALUES ('MAIN_GATE', 'GATE (Main)');
+INSERT INTO `HomeBD`.`Accesspoints` (`accessPointName`, `description`) VALUES ('GATE_NOVUS', 'GATE (NOVUS)');
+INSERT INTO `HomeBD`.`Accesspoints` (`accessPointName`, `description`) VALUES ('WICKET_MAIN_GATE', 'WICKET (MAIN GATE)');
+INSERT INTO `HomeBD`.`Accesspoints` (`accessPointName`, `description`) VALUES ('WICKET_NOVUS', 'WICKET (NOVUS)');
 
 
 -------------------------------------------------------------------------
 
-CREATE TABLE `homebd1`.`userroles` (
+CREATE TABLE `HomeBD`.`UserRoles` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `role` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`id`));
 
-  INSERT INTO `homebd1`.`userroles` (`role`) VALUES ('ROLE_ADMIN');
-  INSERT INTO `homebd1`.`userroles` (`role`) VALUES ('ROLE_USER');
+  INSERT INTO `HomeBD`.`UserRoles` (`role`) VALUES ('ROLE_ADMIN');
+  INSERT INTO `HomeBD`.`UserRoles` (`role`) VALUES ('ROLE_USER');
 
 -------------------------------------------------------------------------
 
-CREATE TABLE `homebd1`.`user` (
+CREATE TABLE `HomeBD`.`User` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `apartment` VARCHAR(15) NULL DEFAULT NULL,
   `firstName` VARCHAR(15) NOT NULL,
@@ -53,5 +53,5 @@ CREATE TABLE `homebd1`.`user` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `contactPhoneNumber_UNIQUE` (`contactPhoneNumber` ASC));
 
-INSERT INTO `homebd1`.`user` (`apartment`, `firstName`, `lastName`, `contactPhoneNumber`, `password`, `enabled`, `role`) VALUES ('homeless', 'adm', 'adm', 'adm', '1234', '1', '1');
+INSERT INTO `HomeBD`.`User` (`apartment`, `firstName`, `lastName`, `contactPhoneNumber`, `password`, `enabled`, `role`) VALUES ('homeless', 'adm', 'adm', 'adm', '1234', '1', '1');
 
