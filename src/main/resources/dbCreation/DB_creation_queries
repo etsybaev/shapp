@@ -1,0 +1,42 @@
+CREATE SCHEMA `homebd1` ;
+
+
+CREATE TABLE `homebd1`.`accessHistory` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `userId` INT(11) NOT NULL,
+  `accessPointId` INT(11) NOT NULL,
+  `datetime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`));
+
+
+
+CREATE TABLE `homebd1`.`accesspoints` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `accessPointName` TEXT NOT NULL,
+  `description` TEXT NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+
+CREATE TABLE `homebd1`.`userroles` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `role` VARCHAR(15) NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+
+CREATE TABLE `homebd1`.`user` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `apartment` VARCHAR(15) NULL DEFAULT NULL,
+  `firstName` VARCHAR(15) NOT NULL,
+  `lastName` VARCHAR(15) NOT NULL,
+  `contactPhoneNumber` VARCHAR(12) NOT NULL,
+  `password` VARCHAR(10) NOT NULL,
+  `enabled` TINYINT(1) NOT NULL DEFAULT 0,
+  `role` INT(11) NULL DEFAULT 2,
+  `createdTime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedTime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `contactPhoneNumber_UNIQUE` (`contactPhoneNumber` ASC));
+
+
